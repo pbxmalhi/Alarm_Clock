@@ -6,9 +6,13 @@ if (isset($_REQUEST['save'])) {
 }
 if (isset($_REQUEST['eid'])) {
     $id = $_REQUEST['eid'];
+    $edid = $_REQUEST['eid'];
     $time = $ob->displayEditTime($id);
 }
-if (isset($_REQUEST['update']) && isset($_REQUEST['editid'])) {
+if (isset($_REQUEST['edtid'])) {
+    $edid = $_REQUEST['edtid'];
+}
+if (isset($_REQUEST['update']) && isset($_REQUEST['edtid'])) {
     $id = $_REQUEST['editid'];
     $ob->updateTime($id);
 }
@@ -43,7 +47,7 @@ if (isset($_REQUEST['update']) && isset($_REQUEST['editid'])) {
                         <table width="100%" class="alarmTable">
                             <tr>
                                 <td colspan="2">
-                                    <input hidden type="text" name="editid" id="edit" value="<?php if (isset($_REQUEST['eid'])) echo $_REQUEST['eid'] ?>">
+                                    <input hidden type="text" name="editid" id="edit" value="<?php if (isset($edid)) echo $edid ?>">
                                 </td>
                             </tr>
                             <tr>
@@ -86,14 +90,31 @@ if (isset($_REQUEST['update']) && isset($_REQUEST['editid'])) {
                                         }
                                         ?>
                                     </select>
-                                    <script type="text/javascript">
-                                        function findmyvalue() {
-                                            var myval = document.getElementById("cont").value;
-                                            var edit = document.getElementById("edit").value;
+                                    <?php
+                                    if (isset($_REQUEST['eid'])) {
 
-                                            window.location.href = "addtime.php?cid=" + myval + "&eid=" + edit;
-                                        }
-                                    </script>
+                                    ?>
+                                        <script type="text/javascript">
+                                            function findmyvalue() {
+                                                var myval = document.getElementById("cont").value;
+                                                var edit = document.getElementById("edit").value;
+
+                                                window.location.href = "addtime.php?cid=" + myval + "&edtid=" + edit;
+                                            }
+                                        </script>
+                                    <?php
+                                    } else {
+                                    ?>
+                                        <script type="text/javascript">
+                                            function findmyvalue() {
+                                                var myval = document.getElementById("cont").value;
+
+                                                window.location.href = "addtime.php?cid=" + myval;
+                                            }
+                                        </script>
+                                    <?php
+                                    }
+                                    ?>
                                 </td>
 
                             </tr>
