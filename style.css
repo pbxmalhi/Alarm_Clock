@@ -1,3 +1,4 @@
+/* Setting the general characterstics of the page */
 *{
     padding: 0;
     margin: 0;
@@ -5,17 +6,21 @@
     box-sizing: border-box;
     color: black;
 }
+/* Color of the backgroung for all the pages */
 body{
     background-color: #fff;
 }
+/* Removing the visibility of the scroll bar */
 ::-webkit-scrollbar {
     display: none;
 }
+/* Aura Alarm heading styling */
 .head{
     padding: 12.5px 50px;
     position: relative;
     border-bottom: 2px solid #ADCEFF;
 }
+/* Setting up main heading position and styling */
 .head p{
     position: absolute;
     left: 50%;
@@ -32,6 +37,7 @@ body{
 .head p:hover{
     color: #000;
 }
+/* Buttons styling in the nav bar */
 .righthead{
     float: right;
     
@@ -70,6 +76,7 @@ body{
 .bell i {
     font-size: 20px;
 }
+/* Logo styling */
 .imgDiv{
     display: inline-block;
 }
@@ -82,7 +89,7 @@ body{
     transform: scale(1.1);
 }
 
-
+/* Sidebar Styling */
 .sidebar{
     padding: 20px 50px;
     background-color: #ADCEFF;
@@ -121,6 +128,7 @@ body{
 .sidebarContainer{
     float: left;
 }
+/* Alarm Table Styling */
 .addAlarm{
     float: right;
     width: 85vw;
@@ -159,6 +167,8 @@ table.viewClockHead td{
 table.alarmTable td.tdHeading{
     text-align: right;
 }
+
+/* Form Styling */
 input{
     width: 50%;
     height: 30px;
@@ -240,8 +250,7 @@ button.reset a{
 }
 
 
-
-
+/* View alarm and clock Page styling */
 .viewAlarmTable{
     float: right;
     width: 85vw;

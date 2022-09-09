@@ -11,6 +11,7 @@ if (isset($_REQUEST['did'])) {
 }
 
 ?>
+<!-- Srcipt so that window reloads every second to display the time -->
 <script>
     setTimeout(function() {
         window.location.reload();
@@ -58,7 +59,7 @@ if (isset($_REQUEST['did'])) {
                             <tr>
                                 <td><?php echo $time['city'] ?></td>
                                 <td>
-
+                                    <!-- Using carbon/composer to print the time in the table -->
                                     <?php
                                     $dt = Carbon::now($time['city'])->format('g:i:s A');
                                     echo $dt;
@@ -78,6 +79,7 @@ if (isset($_REQUEST['did'])) {
                         }
                         ?>
                     </table>
+                    <!-- Setting up page link for pagination -->
                     <?php
                     $number_of_page = $ob->gettimePages();
                     echo "<p class='pagename'>Page: </p>";

@@ -1,3 +1,4 @@
+<!-- Side bar Htm we will include this in all pages -->
 <div class="sidebar">
     <ul>
         <li class="mainLi">Alarms</li>

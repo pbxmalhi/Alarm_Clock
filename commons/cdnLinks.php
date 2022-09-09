@@ -1,3 +1,4 @@
+<!-- Important link like google font, font awesome icons etc and will be included in all the files -->
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -1,3 +1,4 @@
+<!-- Common header file and it will be used in all the pages -->
 <div class="head">
   <div class="imgDiv"><img src="./Aura App Icon.png"></div>
   <!-- <p>ĀÙRĀ ĀLĀRM</p> -->

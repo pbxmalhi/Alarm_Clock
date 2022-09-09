@@ -41,6 +41,7 @@ if (isset($_REQUEST['update']) && isset($_REQUEST['eid'])) {
             <div class="addAlarm">
                 <p class="heading">Set Alarm</p>
                 <div class="formcontainer">
+                    <!-- Form to get the details of the alarm that user wants to setup -->
                     <form method="POST">
                         <table width="100%" class="alarmTable">
                             <tr>

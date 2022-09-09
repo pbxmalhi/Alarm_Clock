@@ -49,8 +49,8 @@ if (isset($_REQUEST['did'])) {
                         foreach ($alarms as $alarm) {
 
                         ?>
+                            <!-- Displaying the alarms from the database in the table -->
                             <tr>
-                                <!-- <td><?php echo $index ?></td> -->
                                 <td><?php echo $alarm['id'] ?></td>
                                 <td><?php echo $alarm['time'] ?></td>
                                 <td><?php echo $alarm['label'] ?></td>
@@ -63,6 +63,7 @@ if (isset($_REQUEST['did'])) {
                         }
                         ?>
                     </table>
+                    <!-- Getting the page link for the page in the pagination -->
                     <?php
                     $number_of_page = $ob->getPages();
                     echo "<p class='pagename'>Page: </p>";

@@ -6,9 +6,11 @@ if (isset($_REQUEST['save'])) {
 }
 if (isset($_REQUEST['eid'])) {
     $id = $_REQUEST['eid'];
+    // edid will be used as a reference for updation
     $edid = $_REQUEST['eid'];
     $time = $ob->displayEditTime($id);
 }
+// when we change the country the eid refence will be removed so we are regaining the eid by javaScript 
 if (isset($_REQUEST['edtid'])) {
     $edid = $_REQUEST['edtid'];
 }
@@ -43,16 +45,17 @@ if (isset($_REQUEST['update']) && isset($_REQUEST['edtid'])) {
             <div class="addAlarm">
                 <p class="heading">Add Time Zone</p>
                 <div class="formcontainer">
+                    <!-- Form to get the data from the user to display the time -->
                     <form method="POST">
                         <table width="100%" class="alarmTable">
                             <tr>
                                 <td colspan="2">
-                                    <input hidden type="text" name="editid" id="edit" value="<?php if (isset($edid)) echo $edid ?>">
+                                    <input hidden type="text" name="editid" id="edit" value="<?php if (isset($edid)) echo $edid ?>" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="tdHeading">Select Continent</td>
-                                <td><select name="continent" id="cont" onchange="findmyvalue()">
+                                <td><select name="continent" id="cont" onchange="findmyvalue()" required>
                                         <?php
                                         $continents = [
                                             'AFRICA', 'AMERICA', 'ANTARCTICA', 'ARCTIC', 'ASIA', 'ATLANTIC', 'AUSTRALIA', 'EUROPE', 'INDIAN', 'PACIFIC'
@@ -94,6 +97,7 @@ if (isset($_REQUEST['update']) && isset($_REQUEST['edtid'])) {
                                     if (isset($_REQUEST['eid'])) {
 
                                     ?>
+                                        <!-- script to get the continent and eid for updation -->
                                         <script type="text/javascript">
                                             function findmyvalue() {
                                                 var myval = document.getElementById("cont").value;
@@ -105,6 +109,7 @@ if (isset($_REQUEST['update']) && isset($_REQUEST['edtid'])) {
                                     <?php
                                     } else {
                                     ?>
+                                        <!-- Script to get the continent  -->
                                         <script type="text/javascript">
                                             function findmyvalue() {
                                                 var myval = document.getElementById("cont").value;
@@ -120,7 +125,8 @@ if (isset($_REQUEST['update']) && isset($_REQUEST['edtid'])) {
                             </tr>
                             <tr>
                                 <td class="tdHeading">Select City</td>
-                                <td><select name="city" id="cont">
+                                <td><select name="city" id="cont" required>
+                                        <!-- Condition if we are updating then show the city that we have selected before else show Select city -->
                                         <option value=<?php if (isset($time['city'])) {
                                                             echo $time['city'];
                                                         } else {
@@ -140,6 +146,7 @@ if (isset($_REQUEST['update']) && isset($_REQUEST['edtid'])) {
                                         } else {
                                             $SelectedContinent = $_GET['cid'];
                                         }
+                                        // Switch contidion as DateTimeZone is a static property and we cannot pass selected continent directly so we have to use switch here
                                         switch ($SelectedContinent) {
                                             case "AFRICA":
                                                 $times =    DateTimeZone::listIdentifiers(

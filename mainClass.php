@@ -185,7 +185,7 @@ class alarm
     }
 
 
-    // Displaying time data from the database
+    // Displaying time data from the database in the table
     public function displayEditTime($id)
     {
         $query = "select * from time where id = $id";
