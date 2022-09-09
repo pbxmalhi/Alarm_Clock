@@ -36,7 +36,7 @@ class alarm
             <script>
                 alert("Alarm Added Successfully");
             </script>
-<?php
+        <?php
         }
     }
 
@@ -87,7 +87,11 @@ class alarm
         $query = "delete from alarms where id = $id";
         $result = $this->connect->query($query);
         if ($result) {
-            header("location:viewAlarms.php");
+        ?>
+            <script>
+                alert("Alarm Added Successfully");
+            </script>
+<?php
         }
     }
 
