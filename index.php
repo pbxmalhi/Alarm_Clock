@@ -54,11 +54,11 @@ if (isset($_REQUEST['update']) && isset($_REQUEST['eid'])) {
                             </tr>
                             <tr>
                                 <td class="tdHeading">Repeat Type : </td>
-                                <td><select name="repType">
+                                <td><select name="repType" required>
                                         <option value=<?php if (isset($data['reptype'])) {
                                                             echo $data['reptype'];
                                                         } else {
-                                                            echo "Default";
+                                                            echo "";
                                                         } ?>>
                                             <?php if (isset($data['reptype'])) {
                                                 echo $data['reptype'];

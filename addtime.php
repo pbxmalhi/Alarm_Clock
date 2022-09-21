@@ -18,6 +18,10 @@ if (isset($_REQUEST['update']) && isset($_REQUEST['edtid'])) {
     $id = $_REQUEST['editid'];
     $ob->updateTime($id);
 }
+if (isset($_REQUEST['update']) && isset($_REQUEST['eid'])) {
+    $id = $_REQUEST['editid'];
+    $ob->updateTime($id);
+}
 
 ?>
 <!DOCTYPE html>
@@ -50,7 +54,7 @@ if (isset($_REQUEST['update']) && isset($_REQUEST['edtid'])) {
                         <table width="100%" class="alarmTable">
                             <tr>
                                 <td colspan="2">
-                                    <input hidden type="text" name="editid" id="edit" value="<?php if (isset($edid)) echo $edid ?>" required>
+                                    <input hidden type="text" name="editid" id="edit" value="<?php if (isset($edid)) echo $edid ?>">
                                 </td>
                             </tr>
                             <tr>
